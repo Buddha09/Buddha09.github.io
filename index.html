@@ -3,862 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buddha Nath Sharma — Senior Research Fellow, NIT Sikkim</title>
-<meta name="description" content="Buddha Nath Sharma — PhD researcher in Topological Data Analysis and Nonlinear Dynamics at the National Institute of Technology Sikkim.">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Buddha Nath Sharma — TDA Researcher</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg:        #f6f2ea;          /* warm cream paper */
-    --bg-alt:    #ece5d6;          /* slightly deeper */
-    --ink:       #161616;          /* near black */
-    --ink-soft:  #3a3a3a;
-    --muted:     #6b6256;
-    --rule:      #c9bfa9;
-    --navy:      #1a3a5c;          /* matches CV */
-    --accent:    #a8501c;          /* terracotta/ochre accent */
-    --highlight: #e9dfc6;
-  }
+:root{
+  --bg:#f6f2ea;
+  --ink:#161616;
+  --muted:#6b6256;
+  --accent:#a8501c;
+  --navy:#1a3a5c;
+  --topo:#2f6f4f;
+  --rule:#c9bfa9;
+}
 
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'DM Sans',sans-serif;
-    background:var(--bg);
-    color:var(--ink);
-    font-size:16.5px;
-    line-height:1.65;
-    font-weight:400;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+body{
+  margin:0;
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+}
 
-  /* subtle paper grain */
-  body::before{
-    content:"";
-    position:fixed;inset:0;
-    background-image:
-      radial-gradient(circle at 25% 35%, rgba(168,80,28,0.04) 0, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(26,58,92,0.05) 0, transparent 45%);
-    pointer-events:none;
-    z-index:0;
-  }
+/* ===== TDA BACKGROUND ===== */
+.tda-bg{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  opacity:0.25;
+  pointer-events:none;
+  z-index:0;
+}
 
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease, color .2s ease;}
-  a:hover{border-bottom-color:var(--accent);}
+/* ===== LAYOUT ===== */
+.wrap{max-width:1100px;margin:auto;padding:40px;position:relative;z-index:1;}
 
-  /* ---------- NAV ---------- */
-  nav.topbar{
-    position:sticky;top:0;z-index:50;
-    backdrop-filter:blur(14px);
-    background:rgba(246,242,234,0.82);
-    border-bottom:1px solid var(--rule);
-  }
-  .nav-inner{
-    max-width:1200px;margin:0 auto;
-    padding:14px 32px;
-    display:flex;align-items:center;justify-content:space-between;
-  }
-  .nav-mark{
-    font-family:'Fraunces',serif;
-    font-weight:500;font-size:20px;
-    letter-spacing:-0.01em;
-    color:var(--ink);
-  }
-  .nav-mark span{color:var(--accent);font-style:italic;}
-  .nav-links{display:flex;gap:28px;list-style:none;}
-  .nav-links a{
-    color:var(--ink-soft);
-    font-size:14px;
-    font-weight:500;
-    border:none;
-    position:relative;
-  }
-  .nav-links a::after{
-    content:"";position:absolute;left:0;right:0;bottom:-4px;
-    height:1px;background:var(--accent);
-    transform:scaleX(0);transform-origin:left;
-    transition:transform .25s ease;
-  }
-  .nav-links a:hover{color:var(--ink);}
-  .nav-links a:hover::after{transform:scaleX(1);}
+h1,h2,h3{font-family:'Fraunces',serif;}
+h1{font-size:64px;margin:0;}
+h2{font-size:40px;margin-bottom:30px;}
+h3{font-size:22px;}
 
-  /* ---------- LAYOUT ---------- */
-  .wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1;}
+section{margin:80px 0;}
 
-  section{padding:90px 0;border-top:1px solid var(--rule);}
-  section:first-of-type{border-top:none;}
+/* ===== HERO ===== */
+.hero p{max-width:600px;font-size:18px;}
 
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--accent);
-    margin-bottom:18px;
-    display:inline-block;
-  }
-  h2.section-title{
-    font-family:'Fraunces',serif;
-    font-weight:400;
-    font-size:clamp(34px,4.5vw,52px);
-    letter-spacing:-0.02em;
-    line-height:1.05;
-    margin-bottom:48px;
-    color:var(--ink);
-  }
-  h2.section-title em{
-    font-style:italic;
-    color:var(--navy);
-    font-variation-settings:"SOFT" 100;
-  }
+.tda-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  letter-spacing:0.2em;
+  color:var(--topo);
+  margin-top:10px;
+}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:80px 0 100px;
-    border-top:none;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:280px 1fr;
-    gap:64px;
-    align-items:start;
-  }
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
 
-  /* Photo placeholder — REPLACE the placeholder div with your image */
-  .photo{
-    position:relative;
-    aspect-ratio:4/5;
-    background:var(--highlight);
-    border:1px solid var(--rule);
-    overflow:hidden;
-  }
-  .photo img{
-    width:100%;height:100%;
-    object-fit:cover;
-    display:block;
-    filter:contrast(1.02) saturate(0.95);
-  }
-  .photo::after{
-    content:"";
-    position:absolute;inset:0;
-    border:1px solid rgba(0,0,0,0.08);
-    pointer-events:none;
-  }
-  .photo-frame{
-    position:relative;
-  }
-  .photo-frame::before{
-    content:"";
-    position:absolute;
-    top:14px;left:14px;right:-14px;bottom:-14px;
-    border:1px solid var(--accent);
-    z-index:-1;
-  }
+.card{
+  padding:25px;
+  border:1px solid var(--rule);
+  background:white;
+}
 
-  .hero-text h1{
-    font-family:'Fraunces',serif;
-    font-weight:300;
-    font-size:clamp(48px,7vw,84px);
-    line-height:0.98;
-    letter-spacing:-0.035em;
-    margin-bottom:18px;
-    color:var(--ink);
-  }
-  .hero-text h1 .accent{
-    font-style:italic;
-    font-weight:400;
-    color:var(--navy);
-    font-variation-settings:"SOFT" 100;
-  }
-  .role{
-    font-size:18px;
-    color:var(--ink-soft);
-    max-width:520px;
-    line-height:1.5;
-    margin-bottom:28px;
-  }
-  .role strong{color:var(--ink);font-weight:500;}
+/* ===== NAV ===== */
+nav{
+  position:sticky;
+  top:0;
+  background:rgba(246,242,234,0.9);
+  padding:15px 40px;
+  border-bottom:1px solid var(--rule);
+  z-index:10;
+}
 
-  .hero-meta{
-    display:flex;flex-wrap:wrap;gap:6px 22px;
-    font-size:13.5px;
-    font-family:'JetBrains Mono',monospace;
-    color:var(--muted);
-    margin-bottom:32px;
-  }
-  .hero-meta a{color:var(--muted);}
-  .hero-meta a:hover{color:var(--accent);}
+nav a{
+  margin-right:20px;
+  text-decoration:none;
+  color:var(--ink);
+}
 
-  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:12px 22px;
-    font-size:14px;
-    font-weight:500;
-    border:1px solid var(--ink);
-    border-radius:0;
-    transition:all .2s ease;
-    background:transparent;
-    color:var(--ink);
-    cursor:pointer;
-  }
-  .btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);}
-  .btn.primary{background:var(--ink);color:var(--bg);}
-  .btn.primary:hover{background:var(--accent);border-color:var(--accent);}
-  .btn .arrow{transition:transform .2s ease;}
-  .btn:hover .arrow{transform:translateX(3px);}
+/* ===== PUBLICATIONS ===== */
+.pub{
+  margin-bottom:25px;
+}
 
-  /* ---------- ABOUT ---------- */
-  .about-grid{
-    display:grid;
-    grid-template-columns:1fr 1.4fr;
-    gap:64px;
-  }
-  .about-grid p{
-    font-size:18px;
-    line-height:1.75;
-    color:var(--ink-soft);
-    margin-bottom:18px;
-  }
-  .about-grid p strong{color:var(--ink);font-weight:500;}
-  .interests-list{
-    list-style:none;
-    margin-top:28px;
-  }
-  .interests-list li{
-    padding:12px 0;
-    border-bottom:1px solid var(--rule);
-    font-family:'Fraunces',serif;
-    font-size:20px;
-    font-weight:400;
-    color:var(--ink);
-    display:flex;align-items:center;gap:14px;
-  }
-  .interests-list li::before{
-    content:"→";
-    color:var(--accent);
-    font-family:'DM Sans',sans-serif;
-  }
+.pub-title{
+  font-weight:500;
+}
 
-  /* ---------- PUBLICATIONS ---------- */
-  .pub-group{margin-bottom:56px;}
-  .pub-group:last-child{margin-bottom:0;}
-  .pub-group-title{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--navy);
-    padding-bottom:14px;
-    margin-bottom:28px;
-    border-bottom:2px solid var(--navy);
-    display:flex;justify-content:space-between;align-items:baseline;
-  }
-  .pub-count{
-    color:var(--muted);
-    font-size:11px;
-  }
-  .pub{
-    display:grid;
-    grid-template-columns:80px 1fr;
-    gap:32px;
-    padding:28px 0;
-    border-bottom:1px solid var(--rule);
-    transition:background .25s ease;
-  }
-  .pub:hover{background:rgba(168,80,28,0.03);}
-  .pub:last-child{border-bottom:none;}
-  .pub-num{
-    font-family:'JetBrains Mono',monospace;
-    font-size:13px;
-    color:var(--muted);
-    padding-top:6px;
-  }
-  .pub-title{
-    font-family:'Fraunces',serif;
-    font-size:21px;
-    font-weight:500;
-    line-height:1.3;
-    letter-spacing:-0.01em;
-    margin-bottom:10px;
-    color:var(--ink);
-  }
-  .pub-authors{
-    font-size:14.5px;
-    color:var(--ink-soft);
-    margin-bottom:8px;
-    line-height:1.55;
-  }
-  .pub-authors .me{color:var(--ink);font-weight:600;border-bottom:2px solid var(--accent);}
-  .pub-venue{
-    font-size:13.5px;
-    color:var(--muted);
-    font-style:italic;
-  }
-  .pub-venue a{color:var(--accent);font-style:normal;font-weight:500;}
+.me{
+  font-weight:bold;
+  color:var(--navy);
+}
 
-  /* ---------- TIMELINE (Education / Conferences) ---------- */
-  .timeline{position:relative;}
-  .timeline::before{
-    content:"";
-    position:absolute;
-    left:120px;top:8px;bottom:8px;
-    width:1px;background:var(--rule);
-  }
-  .tl-item{
-    display:grid;
-    grid-template-columns:120px 1fr;
-    gap:48px;
-    padding:22px 0;
-    position:relative;
-  }
-  .tl-item::before{
-    content:"";
-    position:absolute;
-    left:117px;top:32px;
-    width:7px;height:7px;
-    background:var(--accent);
-    border:1.5px solid var(--bg);
-    box-shadow:0 0 0 1px var(--accent);
-    border-radius:50%;
-  }
-  .tl-date{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12.5px;
-    color:var(--muted);
-    padding-top:5px;
-    text-align:right;
-    padding-right:18px;
-  }
-  .tl-title{
-    font-family:'Fraunces',serif;
-    font-size:22px;
-    font-weight:500;
-    color:var(--ink);
-    margin-bottom:4px;
-    line-height:1.25;
-  }
-  .tl-org{
-    font-size:14.5px;
-    color:var(--navy);
-    font-style:italic;
-    margin-bottom:6px;
-  }
-  .tl-detail{
-    font-size:14px;
-    color:var(--ink-soft);
-    line-height:1.55;
-  }
-
-  /* ---------- TWO-COL CARD GRID ---------- */
-  .grid-2{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-  }
-  .card{
-    background:var(--bg-alt);
-    padding:28px;
-    border:1px solid var(--rule);
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px -15px rgba(0,0,0,0.15);
-  }
-  .card h3{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:20px;
-    margin-bottom:6px;
-    line-height:1.3;
-  }
-  .card .org{
-    font-size:13.5px;color:var(--accent);font-weight:500;
-    margin-bottom:10px;
-  }
-  .card .body{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
-
-  /* ---------- SKILLS ---------- */
-  .skills-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:48px;
-  }
-  .skill-block h4{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:0.18em;
-    color:var(--navy);
-    margin-bottom:18px;
-    padding-bottom:10px;
-    border-bottom:1px solid var(--rule);
-  }
-  .skill-row{
-    display:flex;justify-content:space-between;
-    padding:10px 0;
-    font-size:15px;
-    border-bottom:1px dotted var(--rule);
-  }
-  .skill-row:last-child{border-bottom:none;}
-  .skill-row .level{color:var(--muted);font-style:italic;font-size:13.5px;}
-  .tech-pills{display:flex;flex-wrap:wrap;gap:8px;}
-  .tech-pills span{
-    padding:7px 14px;
-    background:var(--bg);
-    border:1px solid var(--rule);
-    font-size:13px;
-    font-family:'JetBrains Mono',monospace;
-    color:var(--ink-soft);
-    transition:all .2s ease;
-  }
-  .tech-pills span:hover{
-    background:var(--ink);
-    color:var(--bg);
-    border-color:var(--ink);
-  }
-
-  /* ---------- CONTACT / REFEREES ---------- */
-  .contact-block{
-    display:grid;
-    grid-template-columns:1.2fr 2fr;
-    gap:64px;
-    align-items:start;
-  }
-  .contact-info p{
-    font-size:15px;
-    color:var(--ink-soft);
-    margin-bottom:14px;
-    line-height:1.5;
-  }
-  .contact-info .label{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:0.15em;
-    color:var(--muted);
-    display:block;
-    margin-bottom:2px;
-  }
-  .ref-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-  }
-  .ref{
-    padding:22px;
-    background:var(--bg-alt);
-    border-left:3px solid var(--accent);
-  }
-  .ref h4{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    font-size:16px;
-    margin-bottom:6px;
-    line-height:1.3;
-  }
-  .ref p{font-size:13px;color:var(--ink-soft);line-height:1.5;margin-bottom:4px;}
-  .ref .role-line{font-style:italic;}
-  .ref a{font-size:12.5px;word-break:break-all;}
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    padding:48px 0 36px;
-    border-top:1px solid var(--rule);
-    text-align:center;
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    color:var(--muted);
-    letter-spacing:0.05em;
-  }
-  footer .sep{margin:0 12px;color:var(--rule);}
-
-  /* ---------- ANIMATIONS ---------- */
-  @keyframes fadeUp{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
-  }
-  .hero-text > *{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both;}
-  .hero-text > *:nth-child(1){animation-delay:.05s;}
-  .hero-text > *:nth-child(2){animation-delay:.18s;}
-  .hero-text > *:nth-child(3){animation-delay:.30s;}
-  .hero-text > *:nth-child(4){animation-delay:.42s;}
-  .hero-text > *:nth-child(5){animation-delay:.54s;}
-  .photo-frame{animation:fadeUp 1s cubic-bezier(.2,.7,.2,1) .15s both;}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:880px){
-    .nav-links{display:none;}
-    .hero-grid{grid-template-columns:1fr;gap:40px;}
-    .photo{max-width:280px;}
-    .about-grid,.contact-block,.skills-grid,.grid-2,.ref-grid{
-      grid-template-columns:1fr;gap:32px;
-    }
-    .timeline::before{left:0;}
-    .tl-item{grid-template-columns:1fr;gap:6px;padding-left:22px;}
-    .tl-item::before{left:-3px;top:8px;}
-    .tl-date{text-align:left;padding-right:0;}
-    .pub{grid-template-columns:1fr;gap:8px;}
-    .pub-num{padding-top:0;font-size:11px;}
-    section{padding:64px 0;}
-    .wrap{padding:0 22px;}
-  }
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:12px;
+  color:var(--muted);
+}
 </style>
 </head>
+
 <body>
 
-<!-- ============== NAV ============== -->
-<nav class="topbar">
-  <div class="nav-inner">
-    <div class="nav-mark">B<span>·</span>N<span>·</span>Sharma</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#conferences">Conferences</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+<!-- ===== TDA SVG BACKGROUND ===== -->
+<svg class="tda-bg" viewBox="0 0 800 600">
+  <g stroke="rgba(26,58,92,0.2)">
+    <line x1="100" y1="200" x2="200" y2="150"/>
+    <line x1="200" y1="150" x2="300" y2="250"/>
+    <line x1="300" y1="250" x2="100" y2="200"/>
+    <line x1="200" y1="150" x2="250" y2="80"/>
+  </g>
+  <g fill="rgba(168,80,28,0.5)">
+    <circle cx="100" cy="200" r="3"/>
+    <circle cx="200" cy="150" r="3"/>
+    <circle cx="300" cy="250" r="3"/>
+    <circle cx="250" cy="80" r="3"/>
+  </g>
+</svg>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<!-- ============== HERO ============== -->
-<header class="hero wrap" id="top">
-  <div class="hero-grid">
+<!-- ===== HERO ===== -->
+<section class="hero wrap">
+  <h1>Buddha Nath Sharma</h1>
+  <p>
+    I work at the intersection of <strong>Topological Data Analysis</strong>
+    and <strong>Nonlinear Dynamics</strong>, studying structure in data through geometry.
+  </p>
+  <p class="tda-tag">H₀ · H₁ · Persistence · Geometry of Data</p>
+</section>
 
-    <!-- ============================================================
-         PHOTO: Save your photo as "profile.jpg" in the SAME folder
-         as this index.html file. Recommended: square or 4:5 portrait,
-         600×750 px or larger, well-lit, professional headshot.
-         ============================================================ -->
-    <div class="photo-frame">
-      <div class="photo">
-        <img src="profile.jpg" alt="Buddha Nath Sharma"
-             onerror="this.style.display='none';this.parentNode.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;color:#6b6256;font-family:JetBrains Mono,monospace;font-size:11px;text-align:center;padding:20px;line-height:1.6;letter-spacing:0.1em;text-transform:uppercase;&quot;>add<br>profile.jpg<br>here</div>'">
-      </div>
-    </div>
+<!-- ===== RESEARCH ===== -->
+<section id="research" class="wrap">
+  <h2>Research</h2>
 
-    <div class="hero-text">
-      <span class="eyebrow">Senior Research Fellow · NIT Sikkim</span>
-      <h1>Buddha&nbsp;Nath<br><span class="accent">Sharma</span></h1>
-      <p class="role">
-        I work at the intersection of <strong>topological data analysis</strong> and
-        <strong>nonlinear dynamics</strong> — using the geometry of data to find
-        structure in markets, signals, and dynamical systems.
+  <div class="grid">
+    <div class="card">
+      <h3>Regime Detection</h3>
+      <p>
+        Detecting structural transitions in financial systems using
+        persistent homology and Euler characteristic curves.
       </p>
-      <div class="hero-meta">
-        <a href="mailto:bnsharma09@yahoo.com">bnsharma09@yahoo.com</a>
-        <span>Ravangla, Sikkim · India</span>
-        <a href="https://orcid.org/0009-0002-9569-2718" target="_blank" rel="noopener">ORCID 0009-0002-9569-2718</a>
-      </div>
-      <div class="hero-cta">
-        <a href="#publications" class="btn primary">Publications <span class="arrow">→</span></a>
-        <!-- ============================================================
-             CV PDF: Save your compiled CV PDF as "cv.pdf" in the SAME
-             folder as this index.html. The button below links to it.
-             ============================================================ -->
-        <a href="cv.pdf" class="btn" target="_blank" rel="noopener">Download CV ↓</a>
-      </div>
     </div>
-  </div>
-</header>
 
-<!-- ============== ABOUT ============== -->
-<section id="about">
-  <div class="wrap">
-    <span class="eyebrow">01 — About</span>
-    <h2 class="section-title">A physicist studying<br>the <em>shape</em> of data.</h2>
-
-    <div class="about-grid">
-      <div>
-        <p>
-          I am a doctoral researcher in the Department of Physics at the
-          <strong>National Institute of Technology Sikkim</strong>, working on
-          applications of topological data analysis to nonlinear dynamics.
-        </p>
-        <p>
-          My work uses persistent homology and related tools to detect regime
-          shifts, extreme events, and causal structure in financial markets and
-          dynamical systems — turning abstract topology into concrete inference.
-        </p>
-      </div>
-      <div>
-        <span class="eyebrow">Research Interests</span>
-        <ul class="interests-list">
-          <li>Topological Data Analysis</li>
-          <li>Nonlinear Dynamics &amp; Complex Systems</li>
-          <li>Financial Time-Series Analysis</li>
-          <li>Persistent Homology &amp; Euler Characteristic</li>
-        </ul>
-      </div>
+    <div class="card">
+      <h3>Topological Machine Learning</h3>
+      <p>
+        Classification using persistence landscapes,
+        Wasserstein distance, and ECC-based features.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ============== PUBLICATIONS ============== -->
-<section id="publications">
-  <div class="wrap">
-    <span class="eyebrow">02 — Publications</span>
-    <h2 class="section-title">Selected <em>writings</em>.</h2>
+<!-- ===== PUBLICATIONS ===== -->
+<section id="publications" class="wrap">
+  <h2>Publications</h2>
 
-    <!-- JOURNAL ARTICLES -->
-    <div class="pub-group">
-      <div class="pub-group-title">
-        <span>Journal Articles</span>
-        <span class="pub-count">02 published</span>
-      </div>
-
-      <article class="pub">
-        <div class="pub-num">2025 · 01</div>
-        <div>
-          <div class="pub-title">Causality Analysis of COVID-19 Induced Crashes in Stock and Commodity Markets: A Topological Perspective</div>
-          <div class="pub-authors"><span class="me">Buddha Nath Sharma</span>, Anish Rai, S. R. Luwang, Md Nurujjaman, Sushovan Majhi</div>
-          <div class="pub-venue"><a href="https://www.worldscientific.com/doi/10.1142/S0129183126500221" target="_blank" rel="noopener">International Journal of Modern Physics C</a> · 2025</div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-num">2024 · 02</div>
-        <div>
-          <div class="pub-title">Identifying Extreme Events in the Stock Market: A Topological Data Analysis</div>
-          <div class="pub-authors">Anish Rai, <span class="me">Buddha Nath Sharma</span>, S. R. Luwang, Md Nurujjaman, Sushovan Majhi</div>
-          <div class="pub-venue"><a href="https://pubs.aip.org/aip/cha/article-abstract/34/10/103106/3314950" target="_blank" rel="noopener">Chaos: An Interdisciplinary Journal of Nonlinear Science</a> · 2024</div>
-        </div>
-      </article>
+  <div class="pub">
+    <div class="pub-title">
+      Causality Analysis of COVID-19 Induced Crashes
     </div>
-
-    <!-- PREPRINTS -->
-    <div class="pub-group">
-      <div class="pub-group-title">
-        <span>Preprints</span>
-        <span class="pub-count">05 in review</span>
-      </div>
-
-      <article class="pub">
-        <div class="pub-num">2026 · 03</div>
-        <div>
-          <div class="pub-title">Interpretable Classification of Time Series Using Euler Characteristic Surfaces</div>
-          <div class="pub-authors"><span class="me">Buddha Nath Sharma</span>, Vishal Mandal, S. R. Luwang, Md Nurujjaman, Atish J. Mitra, Sushovan Majhi</div>
-          <div class="pub-venue"><a href="https://doi.org/10.21203/rs.3.rs-9295091/v1" target="_blank" rel="noopener">Research Square preprint</a> · April 2026</div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-num">2026 · 04</div>
-        <div>
-          <div class="pub-title">Regime Discovery and Intra-Regime Return Dynamics in Global Equity Markets</div>
-          <div class="pub-authors">S. R. Luwang, <span class="me">Buddha Nath Sharma</span>, Kundan Mukhia, Md Nurujjaman, Anish Rai, Filippo Petroni</div>
-          <div class="pub-venue"><a href="https://arxiv.org/abs/2601.08571" target="_blank" rel="noopener">arXiv preprint</a> · 2026</div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-num">2026 · 05</div>
-        <div>
-          <div class="pub-title">Intraday Limit Order Price Change Transition Dynamics Across Market Capitalizations Through Markov Analysis</div>
-          <div class="pub-authors">S. R. Luwang, Kundan Mukhia, <span class="me">Buddha Nath Sharma</span>, Md Nurujjaman, Anish Rai, Filippo Petroni</div>
-          <div class="pub-venue"><a href="https://arxiv.org/abs/2601.04959" target="_blank" rel="noopener">arXiv preprint</a> · 2026</div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-num">2026 · 06</div>
-        <div>
-          <div class="pub-title">Early-Warning Signals of Political Risk in Stablecoin Markets: Human and Algorithmic Behavior Around the 2024 US Election</div>
-          <div class="pub-authors">Kundan Mukhia, <span class="me">Buddha Nath Sharma</span>, S. R. Luwang, Md Nurujjaman, Chittaranjan Hens, Suman Saha, Tanujit Chakraborty</div>
-          <div class="pub-venue"><a href="https://arxiv.org/abs/2512.00893" target="_blank" rel="noopener">arXiv preprint</a> · 2026</div>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="pub-num">2026 · 07</div>
-        <div>
-          <div class="pub-title">Detecting Regime Transitions in Dynamical Systems via the Mixup Euler Characteristic Profile</div>
-          <div class="pub-authors">Sushovan Majhi, Atish Mitra, Santanu Nandi, Md Nurujjaman, <span class="me">Buddha Nath Sharma</span></div>
-          <div class="pub-venue"><a href="https://arxiv.org/abs/2604.15262" target="_blank" rel="noopener">arXiv preprint</a> · 2026</div>
-        </div>
-      </article>
+    <div>
+      <span class="me">Buddha Nath Sharma</span>, et al.
     </div>
   </div>
-</section>
 
-<!-- ============== EDUCATION ============== -->
-<section id="education">
-  <div class="wrap">
-    <span class="eyebrow">03 — Education</span>
-    <h2 class="section-title">Academic <em>trajectory</em>.</h2>
-
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-date">2023 — Present</div>
-        <div>
-          <div class="tl-title">Ph.D. in Physics</div>
-          <div class="tl-org">National Institute of Technology Sikkim</div>
-          <div class="tl-detail"><em>Thesis:</em> Applications of Topological Data Analysis in Nonlinear Dynamics</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2019 — 2021</div>
-        <div>
-          <div class="tl-title">M.Sc. Physics</div>
-          <div class="tl-org">NBBGC Tadong, Central University of Sikkim</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">2016 — 2019</div>
-        <div>
-          <div class="tl-title">B.Sc. (Hons.) Physics</div>
-          <div class="tl-org">NBBGC Tadong, Central University of Sikkim</div>
-        </div>
-      </div>
+  <div class="pub">
+    <div class="pub-title">
+      Identifying Extreme Events in the Stock Market
     </div>
-
-    <h2 class="section-title" style="margin-top:80px;font-size:clamp(26px,3vw,34px);">Qualifications.</h2>
-    <div class="grid-2">
-      <div class="card">
-        <h3>GATE 2023 — Physics</h3>
-        <div class="org">Graduate Aptitude Test in Engineering</div>
-        <div class="body">Qualified the national-level GATE examination in Physics, 2023.</div>
-      </div>
-      <div class="card">
-        <h3>SLET 2022</h3>
-        <div class="org">State Level Eligibility Test</div>
-        <div class="body">Qualified SLET 2022 — eligible for appointment as Assistant Professor.</div>
-      </div>
+    <div>
+      <span class="me">Buddha Nath Sharma</span>, et al.
     </div>
   </div>
+
 </section>
 
-<!-- ============== MENTORSHIP & PROJECTS ============== -->
-<section id="mentorship">
-  <div class="wrap">
-    <span class="eyebrow">04 — Mentorship &amp; Projects</span>
-    <h2 class="section-title">Working <em>alongside</em>.</h2>
-
-    <div class="grid-2">
-      <div class="card">
-        <h3>Joe Opitz &amp; Adam Moser</h3>
-        <div class="org">Undergraduate Mentees · Feb 2026 — Present</div>
-        <div class="body">
-          Montana Technological University, USA.<br>
-          <strong>Capstone:</strong> <em>Mixup Barcodes for Topology-Aware Financial Decision Making.</em>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Drinking Water Supply Management — Case Study</h3>
-        <div class="org">BIS Student Chapter, NIT Sikkim</div>
-        <div class="body">
-          Aligned with IS 17482:2020 — Requirements for Piped Drinking Water Supply Service. Conducted field visits to PHE divisions across multiple districts in Sikkim.
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="wrap">
+  <h2>About</h2>
+  <p>
+    PhD researcher at NIT Sikkim working on applications of topology
+    to nonlinear systems and financial markets.
+  </p>
 </section>
 
-<!-- ============== CONFERENCES ============== -->
-<section id="conferences">
-  <div class="wrap">
-    <span class="eyebrow">05 — Conferences &amp; Workshops</span>
-    <h2 class="section-title">Where I've <em>presented</em>.</h2>
-
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-date">July 2026</div>
-        <div>
-          <div class="tl-title">International Conference on Nonlinear Systems and Dynamics (CNSD)</div>
-          <div class="tl-org">IISER Thiruvananthapuram, Kerala</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">March 2025</div>
-        <div>
-          <div class="tl-title">Conference on Nonlinear Systems and Dynamics (CNSD)</div>
-          <div class="tl-org">Bharathidasan University, Trichy</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">March 2024</div>
-        <div>
-          <div class="tl-title">Workshop on Topological Data Analysis</div>
-          <div class="tl-org">Sikkim University, Gangtok</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">January 2024</div>
-        <div>
-          <div class="tl-title">International Conference on Complex Dynamical Systems &amp; Applications</div>
-          <div class="tl-org">ISI Kolkata · Digha, West Bengal</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="wrap">
+  <h2>Contact</h2>
+  <p>Email: bnsharma09@yahoo.com</p>
 </section>
 
-<!-- ============== SKILLS ============== -->
-<section id="skills">
-  <div class="wrap">
-    <span class="eyebrow">06 — Skills &amp; Languages</span>
-    <h2 class="section-title">Tools of the <em>trade</em>.</h2>
-
-    <div class="skills-grid">
-      <div class="skill-block">
-        <h4>Languages</h4>
-        <div class="skill-row"><span>English</span><span class="level">Proficient</span></div>
-        <div class="skill-row"><span>Hindi</span><span class="level">Fluent</span></div>
-        <div class="skill-row"><span>Nepali</span><span class="level">Native</span></div>
-      </div>
-
-      <div class="skill-block">
-        <h4>Technical</h4>
-        <div class="tech-pills">
-          <span>Python</span>
-          <span>LaTeX</span>
-          <span>Topological Data Analysis</span>
-          <span>Nonlinear Dynamics</span>
-          <span>Financial Data Analysis</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== CONTACT ============== -->
-<section id="contact">
-  <div class="wrap">
-    <span class="eyebrow">07 — Contact</span>
-    <h2 class="section-title">Get in <em>touch</em>.</h2>
-
-    <div class="contact-block">
-      <div class="contact-info">
-        <p><span class="label">Email</span><a href="mailto:bnsharma09@yahoo.com">bnsharma09@yahoo.com</a></p>
-        <p><span class="label">Phone</span><a href="tel:+918346954320">+91 8346954320</a></p>
-        <p><span class="label">Location</span>Ravangla, Sikkim, India</p>
-        <p><span class="label">ORCID</span><a href="https://orcid.org/0009-0002-9569-2718" target="_blank" rel="noopener">0009-0002-9569-2718</a></p>
-        <p><span class="label">Google Scholar</span><a href="https://scholar.google.com/citations?user=NkVp1oYAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Buddha Nath Sharma</a></p>
-        <p><span class="label">Affiliation</span>Department of Physics<br>NIT Sikkim, Ravangla</p>
-        
-      </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FOOTER ============== -->
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Buddha Nath Sharma
-    <span class="sep">·</span> Live long and prosper 🖖
-    <span class="sep">·</span> NIT Sikkim
-  </div>
+  © 2026 Buddha Nath Sharma
 </footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
