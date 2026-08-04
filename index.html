@@ -326,6 +326,22 @@
     transform:rotate(45deg);
     flex-shrink:0;
   }
+  .interests-list li a{
+    color:var(--ink);
+    border-bottom:1px solid transparent;
+  }
+  .interests-list li a:hover{
+    color:var(--accent);
+    border-bottom-color:var(--accent);
+  }
+
+  /* ---------- WRITING SECTION EXTRAS ---------- */
+  .writing-note{
+    font-size:16px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
 
   /* ---------- PUBLICATIONS ---------- */
   .pub-group{margin-bottom:64px;}
@@ -681,6 +697,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#writing">Writing</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#conferences">Conferences</a></li>
@@ -747,14 +764,18 @@
         <p>
           I am a doctoral researcher in the Department of Physics at the
           <strong>National Institute of Technology Sikkim</strong>. My thesis,
-          <em>Applications of Topological Data Analysis in Nonlinear Dynamics</em>, uses topological tools like the </strong> persistent homology</strong>and </strong>Euler characteristic methods </strong> to analyze the nonlinear systems such as financial markets, weather systems, and biomedical signals. 
-          My works have mainly focused on the use of TDA to detect regime shifts, extreme events, and causal structure across financial
-          markets and dynamical systems. I have also actively collaborated on projects on financial time series analysis. I'm always open to
+          <em>Applications of Topological Data Analysis in Nonlinear Dynamics</em>, uses topological tools like <strong>persistent homology</strong> and <strong>Euler characteristic methods</strong> to analyze nonlinear systems such as financial markets, weather systems, and biomedical signals.
+          My work has mainly focused on using TDA to detect regime shifts, extreme events, and causal structure across financial
+          markets and dynamical systems. I have also actively collaborated on projects in financial time series analysis. I'm always open to
           collaborations on projects in TDA, nonlinear dynamics, or financial data analysis.
         </p>
         <p>
-          Beyond research, I <strong>love reading, writing and educating. </strong> Carl Sagan </strong> is my favourite writer with his </strong> Cosmos </strong> being the best non fiction book I have read so far. 
-          I enjoy playing </strong> cricket </strong>, </strong> badminton </strong> and </strong> chess </strong>. I listen to all genres of music except heavy metal.
+          Beyond research, I'm the kind of person who has a stack of half-finished books on the nightstand and still keeps reading anyway.
+          <strong>Carl Sagan</strong> is my favourite writer — <em>Cosmos</em> remains the best non-fiction book I've read, and probably the
+          reason I still can't look at the night sky without thinking about it too much. On the fiction side, <em>To Kill a Mockingbird</em>
+          has stayed with me long after I finished it. For lighter evenings, I'm a <strong>Big Bang Theory</strong> rerun kind of person —
+          comfort TV I've probably watched through twice over. Away from the desk, you'll find me chasing a cricket ball, on a badminton
+          court, or losing slowly at chess. Music-wise, I'll listen to almost anything — heavy metal is where I draw the line.
         </p>
       </div>
       <div>
@@ -771,10 +792,58 @@
   </div>
 </section>
 
+<!-- ============== SCIENCE WRITING ============== -->
+<section id="writing">
+  <div class="wrap">
+    <span class="eyebrow">02 — Science Writing</span>
+    <h2 class="section-title">Writing for a <em>wider</em> audience.</h2>
+
+    <div class="about-grid" style="grid-template-columns:1fr 1fr;">
+      <div>
+        <span class="eyebrow" style="margin-bottom:16px;">Naya Drishtikon — Magazine Profiles</span>
+        <p class="writing-note">
+          Profile pieces on scientists whose lives and ideas shaped how we see the world.
+        </p>
+        <ul class="interests-list">
+          <li>
+            <!-- Add link to the Einstein article -->
+            <a href="#" target="_blank" rel="noopener">Albert Einstein</a>
+          </li>
+          <li>
+            <!-- Add link to the Madame Curie article -->
+            <a href="#" target="_blank" rel="noopener">Madame Curie</a>
+          </li>
+          <li>
+            <!-- Add link to the Acharya Prafulla Chandra Ray article -->
+            <a href="#" target="_blank" rel="noopener">Acharya Prafulla Chandra Ray</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <span class="eyebrow" style="margin-bottom:16px;">Newspaper Columns</span>
+        <p class="writing-note">
+          I also write popular-science pieces for regional papers, aimed at bringing physics
+          and current research to a general readership.
+        </p>
+        <ul class="interests-list">
+          <li>
+            <!-- Add link to Sikkim Express article(s) -->
+            <a href="#" target="_blank" rel="noopener">Sikkim Express</a>
+          </li>
+          <li>
+            <!-- Add link to Summit Times article(s) -->
+            <a href="#" target="_blank" rel="noopener">Summit Times</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== PUBLICATIONS ============== -->
 <section id="publications">
   <div class="wrap">
-    <span class="eyebrow">02 — Publications</span>
+    <span class="eyebrow">03 — Publications</span>
     <h2 class="section-title">Selected <em>writings</em>.</h2>
 
     <div class="pub-group">
@@ -791,7 +860,7 @@
           <div class="pub-venue"><a href="https://www.worldscientific.com/doi/10.1142/S0129183126500221" target="_blank" rel="noopener">International Journal of Modern Physics C</a> · 2025</div>
         </div>
       </article>
-      
+
        <article class="pub">
         <div class="pub-num">2026 / 07</div>
         <div>
@@ -831,7 +900,7 @@
           <div class="pub-venue"><a href="https://arxiv.org/abs/2601.08571" target="_blank" rel="noopener">arXiv preprint</a> · 2026</div>
         </div>
       </article>
-      
+
       <article class="pub">
         <div class="pub-num">2026 / 06</div>
         <div>
@@ -856,7 +925,7 @@
 <!-- ============== EDUCATION ============== -->
 <section id="education">
   <div class="wrap">
-    <span class="eyebrow">03 — Education</span>
+    <span class="eyebrow">04 — Education</span>
     <h2 class="section-title">Academic <em>trajectory</em>.</h2>
 
     <div class="timeline">
@@ -916,7 +985,7 @@
 <!-- ============== CONFERENCES ============== -->
 <section id="conferences">
   <div class="wrap">
-    <span class="eyebrow">04 — Conferences &amp; Workshops</span>
+    <span class="eyebrow">05 — Conferences &amp; Workshops</span>
     <h2 class="section-title">Where I've <em>presented</em>.</h2>
 
     <div class="timeline">
@@ -955,7 +1024,7 @@
 <!-- ============== SKILLS ============== -->
 <section id="skills">
   <div class="wrap">
-    <span class="eyebrow">05 — Skills &amp; Languages</span>
+    <span class="eyebrow">06 — Skills &amp; Languages</span>
     <h2 class="section-title">Tools of the <em>trade</em>.</h2>
 
     <div class="skills-grid">
@@ -987,7 +1056,7 @@
 <!-- ============== CONTACT ============== -->
 <section id="contact">
   <div class="wrap">
-    <span class="eyebrow">06 — Contact</span>
+    <span class="eyebrow">07 — Contact</span>
     <h2 class="section-title">Get in <em>touch</em>.</h2>
 
     <div class="contact-block">
